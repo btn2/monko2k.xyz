@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from './components/Home';
 import Skins from './components/Skins';
 import Navbar from './components/Navbar';
+import Sheet from './components/Sheet';
 const RouteTransition = () => { 
   const location = useLocation();
   return (
@@ -25,6 +26,9 @@ const RouteTransition = () => {
           } />
           <Route path="/skins.html" element={<Navigate to="/skins" />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/ticks" element={<Sheet />} />
+          
+
         </Routes>
   )
 }

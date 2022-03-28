@@ -1,7 +1,7 @@
 import { Component } from "react"
 import SheetItem from "../components/SheetItem";
 import config from "../config.json"
-import "./Sheet.css"
+import "./style/Sheet.css"
 export class Sheet extends Component {
     constructor() {
         super();
