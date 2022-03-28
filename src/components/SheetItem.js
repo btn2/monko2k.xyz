@@ -1,4 +1,4 @@
-import './SheetItem.css';
+import './style/SheetItem.css';
 function SheetItem(props) {
     let time = new Date(props.data.time)
     let timestring = time.getDate().toString() + '/' + (time.getMonth()+1).toString() + '/' + time.getFullYear().toString()
