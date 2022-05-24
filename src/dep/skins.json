@@ -168,6 +168,14 @@
             "download": "https://monkosite.s3.us-west-2.amazonaws.com/MonkoPastel.osk",
             "preview": "",
             "year": "2022"
+        },
+        {
+            "id": 22,
+            "name": "MonkoGlass",
+            "ver": "",
+            "download": "https://monkosite.s3.us-west-2.amazonaws.com/MonkoGlass.osk",
+            "preview": "",
+            "year": "2022"
         }
     ]
 }
