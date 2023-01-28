@@ -1,7 +1,6 @@
 import SheetItem from '@/components/SheetItem/SheetItem';
 import styles from './Sheet.module.css';
 export default function Sheet({ quotesData }) {
-	console.log('rendering');
 	return (
 		<div>
 			<div className={styles.header}>monkopppeople shitbag wall</div>
