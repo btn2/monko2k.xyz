@@ -13,6 +13,7 @@ export async function getQuotes() {
 			.find()
 			.sort({ time: -1 })
 			.toArray();
+		db.close();
 		return quotedata;
 	} catch (e) {
 		console.error(e);
