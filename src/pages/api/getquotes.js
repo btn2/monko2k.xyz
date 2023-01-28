@@ -16,5 +16,7 @@ export default async function handler(req, res) {
 		res.json(quotedata);
 	} catch (e) {
 		console.error(e);
+	} finally {
+		db.close();
 	}
 }
