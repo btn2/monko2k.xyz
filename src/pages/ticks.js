@@ -18,7 +18,11 @@ export default function Ticks({ quotesData }) {
 }
 
 export async function getStaticProps() {
-	const quotesData = await getQuotes();
+	let quotesData = await getQuotes();
+	if (!quotesData)
+		return {
+			notFound: true,
+		};
 	return {
 		props: {
 			quotesData,

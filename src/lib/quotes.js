@@ -5,19 +5,20 @@ const { MongoClient } = require('mongodb');
 const client = new MongoClient(config.MongoURI);
 
 export async function getQuotes() {
+	let quotes;
 	try {
-		db = await client.connect();
-		quotedata = await db
+		await client.connect();
+
+		quotes = await client
 			.db('SyedBot')
 			.collection('quotes')
 			.find()
 			.sort({ time: -1 })
 			.toArray();
-		db.close();
-		return quotedata;
 	} catch (e) {
 		console.error(e);
 	} finally {
-		db.close();
+		await client.close();
+		return quotes;
 	}
 }
