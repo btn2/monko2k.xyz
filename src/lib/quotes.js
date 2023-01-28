@@ -1,7 +1,22 @@
 import config from '@/config.json';
 
+const { MongoClient } = require('mongodb');
+
+const client = new MongoClient(config.MongoURI);
+
 export async function getQuotes() {
-	let res = await fetch(`${config.backendurl}/getquotes`);
-	let json = await res.json();
-	return json;
+	try {
+		db = await client.connect();
+		quotedata = await db
+			.db('SyedBot')
+			.collection('quotes')
+			.find()
+			.sort({ time: -1 })
+			.toArray();
+		return quotedata;
+	} catch (e) {
+		console.error(e);
+	} finally {
+		db.close();
+	}
 }
