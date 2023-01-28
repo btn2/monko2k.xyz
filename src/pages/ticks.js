@@ -23,6 +23,6 @@ export async function getStaticProps() {
 		props: {
 			quotesData,
 		},
-		revalidate: 600,
+		revalidate: 5,
 	};
 }
