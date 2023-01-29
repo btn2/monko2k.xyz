@@ -1,5 +1,5 @@
-import Navbar from '@/components/Navbar/Navbar';
 import '@/styles/globals.css';
+import Navbar from '@/components/Navbar/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
 				<link rel='icon' href='logo.png' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta name='theme-color' content='#000000' />
-				<meta name='description' content='monko2k.xyz' />
 				<link rel='apple-touch-icon' href='logo.png' />
 			</Head>
 			<Navbar />

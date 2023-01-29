@@ -8,8 +8,6 @@ import youtube from '@/../public/hp_icons/youtube.png';
 import github from '@/../public/hp_icons/github.png';
 import osu from '@/../public/hp_icons/osu.png';
 
-import styles from './Navbar.module.css';
-
 export default function Navbar() {
 	const pathname = useRouter().pathname;
 	function checkurl(event, target) {
@@ -17,7 +15,11 @@ export default function Navbar() {
 	}
 
 	const HomeLink = () => (
-		<Link href='/' className={styles.NavbarButton} onClick={(e) => checkurl(e, '/')}>
+		<Link
+			href='/'
+			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] duration-[0.3] text-[20px]'
+			onClick={(e) => checkurl(e, '/')}
+		>
 			Home
 		</Link>
 	);
@@ -25,36 +27,59 @@ export default function Navbar() {
 	const SkinLink = () => (
 		<Link
 			href='/skins'
-			className={styles.NavbarButton}
+			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] duration-[0.3] text-[20px]'
 			onClick={(e) => checkurl(e, '/skins')}
 		>
 			Skins
 		</Link>
 	);
 
+	const NavBarIcon = ({ href, image, alt }) => {
+		return (
+			<a href={href} className='text-inherit'>
+				<Image
+					src={image}
+					className='pt-[16px] pl-[14px] h-[25px] w-[25px] opacity-[.67] hover:opacity-100'
+					alt={alt}
+				/>
+			</a>
+		);
+	};
+
 	return (
-		<div className={styles.Navbar}>
-			<div className={styles.NavbarContainer}>
-				<div className={styles.NavbarBadge}>Monko2k</div>
+		<div className='w-[96vw] px-[2vw] h-[45px] flex items-center justify-between text-[#aaaaaa]'>
+			<div className='flex flex-row'>
+				<div className='font-bold text-white text-[30px] pr-[40px]'>Monko2k</div>
 				<HomeLink />
 				<SkinLink />
 			</div>
-			<div className={styles.NavbarContainer}>
-				<a href='https://twitter.com/Monko2k' className={styles.a}>
-					<Image src={twitter} className={styles.NavbarIcon} alt='Twitter' />
-				</a>
-				<a href='https://www.twitch.tv/monko2k' className={styles.a}>
-					<Image src={twitch} className={styles.NavbarIcon} alt='Twitch' />
-				</a>
-				<a href='https://www.youtube.com/c/monko2k' className={styles.a}>
-					<Image src={youtube} className={styles.NavbarIcon} alt='youtube' />
-				</a>
-				<a href='https://github.com/Monko2k' className={styles.a}>
-					<Image src={github} className={styles.NavbarIcon} alt='github' />
-				</a>
-				<a href='https://osu.ppy.sh/users/4852013' className={styles.a}>
-					<Image src={osu} className={styles.NavbarIcon} alt='osu' />
-				</a>
+			<div className='flex flex-row'>
+				<NavBarIcon
+					href='https://twitter.com/Monko2k'
+					image={twitter}
+					alt='Twitter'
+				/>
+
+				<NavBarIcon
+					href='https://www.twitch.tv/monko2k'
+					image={twitch}
+					alt='Twitch'
+				/>
+				<NavBarIcon
+					href='https://www.youtube.com/c/monko2k'
+					image={youtube}
+					alt='youtube'
+				/>
+				<NavBarIcon
+					href='https://github.com/Monko2k'
+					image={github}
+					alt='github'
+				/>
+				<NavBarIcon
+					href='https://osu.ppy.sh/users/4852013'
+					image={osu}
+					alt='osu'
+				/>
 			</div>
 		</div>
 	);
