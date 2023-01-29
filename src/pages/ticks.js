@@ -1,5 +1,4 @@
 import Sheet from '@/components/Sheet/Sheet';
-import styles from '@/styles/Ticks.module.css';
 import Head from 'next/head';
 import { getQuotes } from '@/lib/quotes';
 

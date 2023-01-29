@@ -1,6 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	*,
+	::before,
+	::after {
+		box-sizing: content-box;
+	}
+}
+
 body {
 	background-color: black;
-	position: absolute;
+	position: relative;
 	overflow-x: hidden;
 	text-align: center;
 	margin: 0;
@@ -8,6 +20,7 @@ body {
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	line-height: normal;
 }
 
 code {
