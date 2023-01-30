@@ -17,7 +17,7 @@ export default function Navbar() {
 	const HomeLink = () => (
 		<Link
 			href='/'
-			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] duration-[0.3] text-[20px]'
+			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] text-[20px]'
 			onClick={(e) => checkurl(e, '/')}
 		>
 			Home
@@ -27,7 +27,7 @@ export default function Navbar() {
 	const SkinLink = () => (
 		<Link
 			href='/skins'
-			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] duration-[0.3] text-[20px]'
+			className='pr-[8px] mx-[8px] mt-auto h-[25px] leading-[20px] rounded-[5px] text-[20px]'
 			onClick={(e) => checkurl(e, '/skins')}
 		>
 			Skins
@@ -38,6 +38,7 @@ export default function Navbar() {
 		return (
 			<a href={href} className='text-inherit'>
 				<Image
+					priority
 					src={image}
 					className='pt-[16px] pl-[14px] h-[25px] w-[25px] opacity-[.67] hover:opacity-100'
 					alt={alt}
